@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{upgrade}\PYGdefault{p}{(}\PYGdefault{n}{db\PYGdefaultZus{}path}\PYGdefault{p}{):}
+    \PYGdefault{k}{with} \PYGdefault{n}{dbapi2}\PYGdefault{o}{.}\PYGdefault{n}{connect}\PYGdefault{p}{(}\PYGdefault{n}{db\PYGdefaultZus{}path}\PYGdefault{p}{)} \PYGdefault{k}{as} \PYGdefault{n}{con}\PYGdefault{p}{:}
+        \PYGdefault{n}{cur} \PYGdefault{o}{=} \PYGdefault{n}{con}\PYGdefault{o}{.}\PYGdefault{n}{cursor}\PYGdefault{p}{()}
+
+        \PYGdefault{c}{\PYGdefaultZsh{} Use PRAGMA key to encrypt / decrypt database.}
+        \PYGdefault{n}{cur}\PYGdefault{o}{.}\PYGdefault{n}{execute}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}PRAGMA key = \PYGdefaultZsq{}passphrase\PYGdefaultZsq{};\PYGdefaultZdq{}}\PYGdefault{p}{)}
+
+        \PYGdefault{k}{try}\PYGdefault{p}{:}
+            \PYGdefault{n}{cur}\PYGdefault{o}{.}\PYGdefault{n}{execute}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}ALTER TABLE settings \PYGdefaultZdq{}}
+                        \PYGdefault{l+s}{\PYGdefaultZdq{}ADD COLUMN namecoin\PYGdefaultZus{}id TEXT\PYGdefaultZdq{}}\PYGdefault{p}{)}
+            \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZsq{}Upgraded\PYGdefaultZsq{}}
+            \PYGdefault{n}{con}\PYGdefault{o}{.}\PYGdefault{n}{commit}\PYGdefault{p}{()}
+        \PYGdefault{k}{except} \PYGdefault{n}{dbapi2}\PYGdefault{o}{.}\PYGdefault{n}{Error} \PYGdefault{k}{as} \PYGdefault{n}{e}\PYGdefault{p}{:}
+            \PYGdefault{k}{print} \PYGdefault{l+s}{\PYGdefaultZsq{}Exception: }\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZsq{}} \PYGdefault{o}{\PYGdefaultZpc{}} \PYGdefault{n}{e}
+\end{Verbatim}

@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n+nt}{\PYGdefaultZlt{}div} \PYGdefault{n+na}{class=}\PYGdefault{l+s}{\PYGdefaultZdq{}form\PYGdefaultZhy{}group\PYGdefaultZdq{}}\PYGdefault{n+nt}{\PYGdefaultZgt{}}
+    \PYGdefault{n+nt}{\PYGdefaultZlt{}label} \PYGdefault{n+na}{for=}\PYGdefault{l+s}{\PYGdefaultZdq{}inputNamecoin\PYGdefaultZus{}id\PYGdefaultZdq{}} 
+        \PYGdefault{n+na}{class=}\PYGdefault{l+s}{\PYGdefaultZdq{}col\PYGdefaultZhy{}sm\PYGdefaultZhy{}3 control\PYGdefaultZhy{}label\PYGdefaultZdq{}}\PYGdefault{n+nt}{\PYGdefaultZgt{}}Namecoin id
+    \PYGdefault{n+nt}{\PYGdefaultZlt{}/label\PYGdefaultZgt{}}
+    \PYGdefault{n+nt}{\PYGdefaultZlt{}div} \PYGdefault{n+na}{class=}\PYGdefault{l+s}{\PYGdefaultZdq{}col\PYGdefaultZhy{}sm\PYGdefaultZhy{}9\PYGdefaultZdq{}}\PYGdefault{n+nt}{\PYGdefaultZgt{}}
+        \PYGdefault{n+nt}{\PYGdefaultZlt{}input} \PYGdefault{n+na}{data\PYGdefaultZhy{}ng\PYGdefaultZhy{}model=}\PYGdefault{l+s}{\PYGdefaultZdq{}settings.namecoin\PYGdefaultZus{}id\PYGdefaultZdq{}} 
+               \PYGdefault{n+na}{data\PYGdefaultZhy{}ng\PYGdefaultZhy{}maxlength=}\PYGdefault{l+s}{\PYGdefaultZdq{}39\PYGdefaultZdq{}} 
+               \PYGdefault{n+na}{data\PYGdefaultZhy{}ng\PYGdefaultZhy{}pattern=}\PYGdefault{l+s}{\PYGdefaultZdq{}/\PYGdefaultZca{}[a\PYGdefaultZhy{}z0\PYGdefaultZhy{}9\PYGdefaultZbs{}\PYGdefaultZhy{}]+\PYGdefaultZdl{}/\PYGdefaultZdq{}} 
+               \PYGdefault{n+na}{class=}\PYGdefault{l+s}{\PYGdefaultZdq{}form\PYGdefaultZhy{}control\PYGdefaultZdq{}} 
+               \PYGdefault{n+na}{id=}\PYGdefault{l+s}{\PYGdefaultZdq{}inputNamecoin\PYGdefaultZus{}id\PYGdefaultZdq{}} 
+               \PYGdefault{n+na}{name=}\PYGdefault{l+s}{\PYGdefaultZdq{}inputNamecoin\PYGdefaultZus{}id\PYGdefaultZdq{}}
+               \PYGdefault{n+na}{placeholder=}\PYGdefault{l+s}{\PYGdefaultZdq{}Namecoin id\PYGdefaultZdq{}}
+        \PYGdefault{n+nt}{\PYGdefaultZgt{}}
+    \PYGdefault{n+nt}{\PYGdefaultZlt{}/div\PYGdefaultZgt{}}
+\PYGdefault{n+nt}{\PYGdefaultZlt{}/div\PYGdefaultZgt{}}
+\end{Verbatim}

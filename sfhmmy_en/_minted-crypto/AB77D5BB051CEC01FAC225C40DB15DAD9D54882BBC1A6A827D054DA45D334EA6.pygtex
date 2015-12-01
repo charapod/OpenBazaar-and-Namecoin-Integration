@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{\PYGdefaultZus{}on\PYGdefaultZus{}message}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{p}{,} \PYGdefault{n}{msg}\PYGdefault{p}{):}
+
+    \PYGdefault{c}{\PYGdefaultZsh{} here goes the application callbacks}
+    \PYGdefault{c}{\PYGdefaultZsh{} we get a \PYGdefaultZdq{}clean\PYGdefaultZdq{} msg which is a dict holding whatever}
+
+    \PYGdefault{n}{pubkey} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}pubkey\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{uri} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}uri\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{guid} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}senderGUID\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{nickname} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}senderNick\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZsq{}}\PYGdefault{p}{)[:}\PYGdefault{l+m+mi}{120}\PYGdefault{p}{]}
+    \PYGdefault{n}{msg\PYGdefaultZus{}type} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}type\PYGdefaultZsq{}}\PYGdefault{p}{)}
+    \PYGdefault{n}{namecoin} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}senderNamecoin\PYGdefaultZsq{}}\PYGdefault{p}{)}
+
+    \PYGdefault{c}{\PYGdefaultZsh{} Checking for malformed URIs}
+    \PYGdefault{k}{if} \PYGdefault{o+ow}{not} \PYGdefault{n}{network\PYGdefaultZus{}util}\PYGdefault{o}{.}\PYGdefault{n}{is\PYGdefaultZus{}valid\PYGdefaultZus{}uri}\PYGdefault{p}{(}\PYGdefault{n}{uri}\PYGdefault{p}{):}
+        \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{log}\PYGdefault{o}{.}\PYGdefault{n}{error}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}Malformed URI: }\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{uri}\PYGdefault{p}{)}
+        \PYGdefault{k}{return}
+
+    \PYGdefault{c}{\PYGdefaultZsh{} Validate the claimed namecoin in DNSChain}
+    \PYGdefault{k}{if} \PYGdefault{o+ow}{not} \PYGdefault{n}{trust}\PYGdefault{o}{.}\PYGdefault{n}{is\PYGdefaultZus{}valid\PYGdefaultZus{}namecoin}\PYGdefault{p}{(}\PYGdefault{n}{namecoin}\PYGdefault{p}{,} \PYGdefault{n}{guid}\PYGdefault{p}{):}
+        \PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}senderNamecoin\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZsq{}}
+
+    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{log}\PYGdefault{o}{.}\PYGdefault{n}{info}\PYGdefault{p}{(}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}Received message type \PYGdefaultZdq{}}\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZdq{} from \PYGdefaultZdq{}}\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZdq{} }\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{ }\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{n}{msg\PYGdefaultZus{}type}\PYGdefault{p}{,} \PYGdefault{n}{nickname}\PYGdefault{p}{,} \PYGdefault{n}{uri}\PYGdefault{p}{,} \PYGdefault{n}{guid}
+    \PYGdefault{p}{)}
+    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{log}\PYGdefault{o}{.}\PYGdefault{n}{datadump}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}Raw message: }\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{p}{,} 
+            \PYGdefault{n}{json}\PYGdefault{o}{.}\PYGdefault{n}{dumps}\PYGdefault{p}{(}\PYGdefault{n}{msg}\PYGdefault{p}{,} \PYGdefault{n}{ensure\PYGdefaultZus{}ascii}\PYGdefault{o}{=}\PYGdefault{n+nb+bp}{False}\PYGdefault{p}{))}
+    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{dht}\PYGdefault{o}{.}\PYGdefault{n}{add\PYGdefaultZus{}peer}\PYGdefault{p}{(}\PYGdefault{n}{uri}\PYGdefault{p}{,} \PYGdefault{n}{pubkey}\PYGdefault{p}{,} \PYGdefault{n}{guid}\PYGdefault{p}{,} \PYGdefault{n}{nickname}\PYGdefault{p}{)}
+    \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{trigger\PYGdefaultZus{}callbacks}\PYGdefault{p}{(}\PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}type\PYGdefaultZsq{}}\PYGdefault{p}{],} \PYGdefault{n}{msg}\PYGdefault{p}{)}
+\end{Verbatim}

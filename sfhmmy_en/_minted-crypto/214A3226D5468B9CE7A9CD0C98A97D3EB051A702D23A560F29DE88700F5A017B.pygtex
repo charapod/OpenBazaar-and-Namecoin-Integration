@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c}{\PYGdefaultZsh{} Include sender information and version}
+\PYGdefault{n}{data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}guid\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{guid}
+\PYGdefault{n}{data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}senderGUID\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{guid}
+\PYGdefault{n}{data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}uri\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{uri}
+\PYGdefault{n}{data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}pubkey\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{pubkey}
+\PYGdefault{n}{data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}senderNick\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{nickname}
+\PYGdefault{n}{data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}senderNamecoin\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{namecoin\PYGdefaultZus{}id}
+\PYGdefault{n}{data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}v\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{n}{constants}\PYGdefault{o}{.}\PYGdefault{n}{VERSION}
+\end{Verbatim}

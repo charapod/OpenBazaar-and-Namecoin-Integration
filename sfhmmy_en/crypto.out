@@ -1,0 +1,24 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Bitcoin}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{One more currency}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Bitcoin Transactions}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Conclusions}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Namecoin}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Making a good idea better}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Differences from Bitcoin}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{The .bit domain}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Openbazaar}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{What is OpenBazaar}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{How does OpenBazaar work}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{And what if something goes wrong?}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.4}{Proof-of-burn}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.5}{Reputation Pledges}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{OpenBazaar - Namecoin Integration}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Allow users to configure their user-friendly URL in the UI}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Relay Namecoin id to other nodes}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Validate claimed Namecoin id from data received}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.4}{Display remote namecoin id name}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.5}{Test a basic complete request/response}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.6}{Make Travis run the tests}{section.5}% 22
+\BOOKMARK [1][-]{section.6}{Future Work}{}% 23
+\BOOKMARK [1][-]{section*.1}{References}{}% 24

@@ -1,0 +1,38 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{class} \PYGdefault{n+nc}{TestDNSChainLookup}\PYGdefault{p}{(}\PYGdefault{n}{unittest}\PYGdefault{o}{.}\PYGdefault{n}{TestCase}\PYGdefault{p}{):}
+
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{setUp}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{p}{):}
+        \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{dnschain\PYGdefaultZus{}server} \PYGdefault{o}{=} \PYGdefault{n}{Server}\PYGdefault{p}{(}
+            \PYGdefault{l+s}{\PYGdefaultZdq{}192.184.93.146\PYGdefaultZdq{}}\PYGdefault{p}{,}
+            \PYGdefault{l+s}{\PYGdefaultZdq{}NOTYETIMPLEMENTED\PYGdefaultZdq{}}
+        \PYGdefault{p}{)}
+        \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{test\PYGdefaultZus{}cases} \PYGdefault{o}{=} \PYGdefault{p}{\PYGdefaultZob{}}
+            \PYGdefault{l+s}{\PYGdefaultZdq{}id/dionyziz\PYGdefaultZdq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZdq{}dionyziz@gmail.com\PYGdefaultZdq{}}\PYGdefault{p}{,}
+            \PYGdefault{l+s}{\PYGdefaultZdq{}id/greg\PYGdefaultZdq{}}\PYGdefault{p}{:} \PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZdq{}contact@taoeffect.com\PYGdefaultZdq{}}\PYGdefault{p}{,}
+                        \PYGdefault{l+s}{\PYGdefaultZdq{}hi@okturtles.com\PYGdefaultZdq{}}\PYGdefault{p}{]}
+        \PYGdefault{p}{\PYGdefaultZcb{}}
+        \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{responses} \PYGdefault{o}{=} \PYGdefault{p}{\PYGdefaultZob{}\PYGdefaultZcb{}}
+        \PYGdefault{k}{for} \PYGdefault{n}{name} \PYGdefault{o+ow}{in} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{test\PYGdefaultZus{}cases}\PYGdefault{p}{:}
+            \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{responses}\PYGdefault{p}{[}\PYGdefault{n}{name}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefaultZbs{}
+                \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{dnschain\PYGdefaultZus{}server}\PYGdefault{o}{.}\PYGdefault{n}{lookup}\PYGdefault{p}{(}\PYGdefault{n}{name}\PYGdefault{p}{)}
+        
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{test\PYGdefaultZus{}valid\PYGdefaultZus{}JSON}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{p}{):}
+        \PYGdefault{k}{for} \PYGdefault{n}{response} \PYGdefault{o+ow}{in} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{responses}\PYGdefault{o}{.}\PYGdefault{n}{itervalues}\PYGdefault{p}{():}
+            \PYGdefault{k}{try}\PYGdefault{p}{:}
+                \PYGdefault{n}{json}\PYGdefault{o}{.}\PYGdefault{n}{dumps}\PYGdefault{p}{(}\PYGdefault{n}{response}\PYGdefault{p}{)}
+            \PYGdefault{k}{except}\PYGdefault{p}{:}
+                \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{fail}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}Response was not valid JSON\PYGdefaultZdq{}}\PYGdefault{p}{)}
+        
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{test\PYGdefaultZus{}contains\PYGdefaultZus{}email}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{p}{):}
+        \PYGdefault{k}{for} \PYGdefault{n}{response} \PYGdefault{o+ow}{in} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{responses}\PYGdefault{o}{.}\PYGdefault{n}{itervalues}\PYGdefault{p}{():}
+            \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{assertIn}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}email\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{response}\PYGdefault{p}{)}
+
+    \PYGdefault{k}{def} \PYGdefault{n+nf}{test\PYGdefaultZus{}correct\PYGdefaultZus{}email}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{p}{):}
+        \PYGdefault{k}{for} \PYGdefault{n}{name} \PYGdefault{o+ow}{in} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{test\PYGdefaultZus{}cases}\PYGdefault{p}{:}
+            \PYGdefault{k}{if} \PYGdefault{l+s}{\PYGdefaultZdq{}email\PYGdefaultZdq{}} \PYGdefault{o+ow}{not} \PYGdefault{o+ow}{in} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{responses}\PYGdefault{p}{[}\PYGdefault{n}{name}\PYGdefault{p}{]:}
+                \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{skipTest}\PYGdefault{p}{(}
+                    \PYGdefault{l+s}{\PYGdefaultZsq{}Response does not contain key \PYGdefaultZdq{}email\PYGdefaultZdq{}\PYGdefaultZsq{}}
+                \PYGdefault{p}{)}
+            \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{assertEqual}\PYGdefault{p}{(}\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{test\PYGdefaultZus{}cases}\PYGdefault{p}{[}\PYGdefault{n}{name}\PYGdefault{p}{],} 
+                             \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{responses}\PYGdefault{p}{[}\PYGdefault{n}{name}\PYGdefault{p}{][}\PYGdefault{l+s}{\PYGdefaultZdq{}email\PYGdefaultZdq{}}\PYGdefault{p}{])}
+\end{Verbatim}

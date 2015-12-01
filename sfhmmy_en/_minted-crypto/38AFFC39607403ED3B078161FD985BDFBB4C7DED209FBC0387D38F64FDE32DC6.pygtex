@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{c}{\PYGdefaultZsh{} Validate that the namecoin id received is well formed}
+\PYGdefault{k}{if} \PYGdefault{o+ow}{not} \PYGdefault{n}{re}\PYGdefault{o}{.}\PYGdefault{n}{match}\PYGdefault{p}{(}\PYGdefault{l+s}{r\PYGdefaultZsq{}\PYGdefaultZca{}[a\PYGdefaultZhy{}z0\PYGdefaultZhy{}9\PYGdefaultZbs{}\PYGdefaultZhy{}]\PYGdefaultZob{}1,39\PYGdefaultZcb{}\PYGdefaultZdl{}\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}namecoin\PYGdefaultZus{}id\PYGdefaultZsq{}}\PYGdefault{p}{]):}
+    \PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}namecoin\PYGdefaultZus{}id\PYGdefaultZsq{}}\PYGdefault{p}{]} \PYGdefault{o}{=} \PYGdefault{l+s}{\PYGdefaultZsq{}\PYGdefaultZsq{}}
+
+\PYGdefault{c}{\PYGdefaultZsh{} Update nickname and namecoin id}
+\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{nickname} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}nickname\PYGdefaultZsq{}}\PYGdefault{p}{]}
+\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{namecoin\PYGdefaultZus{}id} \PYGdefault{o}{=} \PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}namecoin\PYGdefaultZus{}id\PYGdefaultZsq{}}\PYGdefault{p}{]}
+
+\PYGdefault{k}{if} \PYGdefault{l+s}{\PYGdefaultZsq{}burnAmount\PYGdefaultZsq{}} \PYGdefault{o+ow}{in} \PYGdefault{n}{msg}\PYGdefault{p}{:}
+    \PYGdefault{k}{del} \PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}burnAmount\PYGdefaultZsq{}}\PYGdefault{p}{]}
+\PYGdefault{k}{if} \PYGdefault{l+s}{\PYGdefaultZsq{}burnAddr\PYGdefaultZsq{}} \PYGdefault{o+ow}{in} \PYGdefault{n}{msg}\PYGdefault{p}{:}
+    \PYGdefault{k}{del} \PYGdefault{n}{msg}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZsq{}burnAddr\PYGdefaultZsq{}}\PYGdefault{p}{]}
+
+\PYGdefault{c}{\PYGdefaultZsh{} Update local settings}
+\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{db}\PYGdefault{o}{.}\PYGdefault{n}{updateEntries}\PYGdefault{p}{(}
+    \PYGdefault{l+s}{\PYGdefaultZdq{}settings\PYGdefaultZdq{}}\PYGdefault{p}{,}
+    \PYGdefault{n}{msg}\PYGdefault{p}{,}
+    \PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{l+s}{\PYGdefaultZsq{}market\PYGdefaultZus{}id\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{market\PYGdefaultZus{}id}\PYGdefault{p}{\PYGdefaultZcb{}}
+\PYGdefault{p}{)}
+\end{Verbatim}

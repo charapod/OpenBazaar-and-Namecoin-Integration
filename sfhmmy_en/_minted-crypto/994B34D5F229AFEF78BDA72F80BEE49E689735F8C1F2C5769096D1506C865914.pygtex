@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k}{def} \PYGdefault{n+nf}{is\PYGdefaultZus{}valid\PYGdefaultZus{}namecoin}\PYGdefault{p}{(}\PYGdefault{n}{namecoin}\PYGdefault{p}{,} \PYGdefault{n}{guid}\PYGdefault{p}{):}
+    \PYGdefault{k}{if} \PYGdefault{o+ow}{not} \PYGdefault{n}{namecoin} \PYGdefault{o+ow}{or} \PYGdefault{o+ow}{not} \PYGdefault{n}{guid}\PYGdefault{p}{:}
+        \PYGdefault{k}{return} \PYGdefault{n+nb+bp}{False}
+
+    \PYGdefault{n}{server} \PYGdefault{o}{=} \PYGdefault{n}{DNSChainServer}\PYGdefault{o}{.}\PYGdefault{n}{Server}\PYGdefault{p}{(}
+        \PYGdefault{n}{constants}\PYGdefault{o}{.}\PYGdefault{n}{DNSCHAIN\PYGdefaultZus{}SERVER\PYGdefaultZus{}IP}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{p}{)}
+    \PYGdefault{n}{\PYGdefaultZus{}log}\PYGdefault{o}{.}\PYGdefault{n}{info}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}Looking up namecoin id: }\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{namecoin}\PYGdefault{p}{)}
+    \PYGdefault{k}{try}\PYGdefault{p}{:}
+        \PYGdefault{n}{data} \PYGdefault{o}{=} \PYGdefault{n}{server}\PYGdefault{o}{.}\PYGdefault{n}{lookup}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}id/\PYGdefaultZdq{}} \PYGdefault{o}{+} \PYGdefault{n}{namecoin}\PYGdefault{p}{)}
+    \PYGdefault{k}{except} \PYGdefault{p}{(}\PYGdefault{n}{DNSChainServer}\PYGdefault{o}{.}\PYGdefault{n}{DataNotFound}\PYGdefault{p}{,} 
+            \PYGdefault{n}{DNSChainServer}\PYGdefault{o}{.}\PYGdefault{n}{MalformedJSON}\PYGdefault{p}{):}
+        \PYGdefault{n}{\PYGdefaultZus{}log}\PYGdefault{o}{.}\PYGdefault{n}{info}\PYGdefault{p}{(}
+            \PYGdefault{l+s}{\PYGdefaultZsq{}Claimed remote namecoin id not found: }\PYGdefault{l+s+si}{\PYGdefaultZpc{}s}\PYGdefault{l+s}{\PYGdefaultZsq{}}\PYGdefault{p}{,} 
+            \PYGdefault{n}{namecoin}
+        \PYGdefault{p}{)}
+        \PYGdefault{k}{return} \PYGdefault{n+nb+bp}{False}
+
+    \PYGdefault{k}{return} \PYGdefault{n}{data}\PYGdefault{o}{.}\PYGdefault{n}{get}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZsq{}openbazaar\PYGdefaultZsq{}}\PYGdefault{p}{)} \PYGdefault{o}{==} \PYGdefault{n}{guid}
+\end{Verbatim}

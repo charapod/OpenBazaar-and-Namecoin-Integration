@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n+nt}{\PYGdefaultZlt{}tr} \PYGdefault{n+na}{data\PYGdefaultZhy{}ng\PYGdefaultZhy{}show=}\PYGdefault{l+s}{\PYGdefaultZdq{}page.senderNamecoin\PYGdefaultZdq{}}\PYGdefault{n+nt}{\PYGdefaultZgt{}}
+    \PYGdefault{n+nt}{\PYGdefaultZlt{}td} \PYGdefault{n+na}{class=}\PYGdefault{l+s}{\PYGdefaultZdq{}col\PYGdefaultZhy{}xs\PYGdefaultZhy{}3\PYGdefaultZdq{}}\PYGdefault{n+nt}{\PYGdefaultZgt{}}Store URL\PYGdefault{n+nt}{\PYGdefaultZlt{}/td\PYGdefaultZgt{}}
+    \PYGdefault{n+nt}{\PYGdefaultZlt{}td} \PYGdefault{n+na}{style=}\PYGdefault{l+s}{\PYGdefaultZdq{}word\PYGdefaultZhy{}wrap:break\PYGdefaultZhy{}word\PYGdefaultZdq{}}\PYGdefault{n+nt}{\PYGdefaultZgt{}}
+        \PYGdefaultZob{}\PYGdefaultZob{}page.senderNamecoin\PYGdefaultZcb{}\PYGdefaultZcb{}
+    \PYGdefault{n+nt}{\PYGdefaultZlt{}/td\PYGdefaultZgt{}}
+\PYGdefault{n+nt}{\PYGdefaultZlt{}/tr\PYGdefaultZgt{}}
+\end{Verbatim}

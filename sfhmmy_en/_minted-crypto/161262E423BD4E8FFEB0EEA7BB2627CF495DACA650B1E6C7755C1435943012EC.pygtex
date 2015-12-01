@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{l+lScalar+lScalarPlain}{language}\PYGdefault{p+pIndicator}{:} \PYGdefault{l+lScalar+lScalarPlain}{python}
+
+\PYGdefault{l+lScalar+lScalarPlain}{python}\PYGdefault{p+pIndicator}{:}
+  \PYGdefault{p+pIndicator}{\PYGdefaultZhy{}} \PYGdefault{l+s}{\PYGdefaultZdq{}2.7\PYGdefaultZdq{}}
+
+\PYGdefault{l+lScalar+lScalarPlain}{script}\PYGdefault{p+pIndicator}{:}
+  \PYGdefault{p+pIndicator}{\PYGdefaultZhy{}} \PYGdefault{l+lScalar+lScalarPlain}{nosetests}
+\end{Verbatim}

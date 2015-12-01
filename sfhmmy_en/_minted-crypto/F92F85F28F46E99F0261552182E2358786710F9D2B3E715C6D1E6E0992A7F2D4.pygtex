@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{send\PYGdefaultZus{}raw}\PYGdefault{p}{(}
+    \PYGdefault{n}{json}\PYGdefault{o}{.}\PYGdefault{n}{dumps}\PYGdefault{p}{(\PYGdefaultZob{}}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}type\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{l+s}{\PYGdefaultZsq{}hello\PYGdefaultZsq{}}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}pubkey\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{pubkey}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}uri\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{uri}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}senderGUID\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{guid}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}senderNick\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{nickname}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}senderNamecoin\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n+nb+bp}{self}\PYGdefault{o}{.}\PYGdefault{n}{transport}\PYGdefault{o}{.}\PYGdefault{n}{namecoin\PYGdefaultZus{}id}\PYGdefault{p}{,}
+        \PYGdefault{l+s}{\PYGdefaultZsq{}v\PYGdefaultZsq{}}\PYGdefault{p}{:} \PYGdefault{n}{constants}\PYGdefault{o}{.}\PYGdefault{n}{VERSION}
+    \PYGdefault{p}{\PYGdefaultZcb{}),}
+    \PYGdefault{n}{cb}
+\PYGdefault{p}{)}
+\end{Verbatim}
